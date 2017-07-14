@@ -1,11 +1,9 @@
-package org.blazer.test;
-
+package org.blazer.employeeextract2;
 
 import java.util.Hashtable;
 import javax.naming.Context;
 import javax.naming.NamingEnumeration;
 import javax.naming.NamingException;
-import javax.naming.directory.Attribute;
 import javax.naming.directory.Attributes;
 import javax.naming.directory.DirContext;
 import javax.naming.directory.InitialDirContext;
@@ -74,24 +72,24 @@ public class LdapDemo {
 				SearchResult sr = ne.nextElement();
 				dn = sr.getNameInNamespace();
 				System.out.println(dn);
-//				// 获取cn属性
+				// // 获取cn属性
 				Attributes attrs = sr.getAttributes();
-//				Attribute cnAttr = attrs.get("cn");
-//				Object cnobj = cnAttr.get();
-//				if (cnobj != null) {
-//					String cn = cnobj.toString();
-//					System.out.println("cn=" + cn);
-//				}
-//				// 获取departmentnumber属性
-//				Attribute deptAttr = attrs.get("departmentnumber");
-//				if (deptAttr != null) {
-//					Object deptobj = deptAttr.get();
-//					if (cnobj != null) {
-//						String dept = deptobj.toString();
-//						System.out.println("dept=" + dept);
-//					}
-//				}
-//				// 获取其他属性类似
+				// Attribute cnAttr = attrs.get("cn");
+				// Object cnobj = cnAttr.get();
+				// if (cnobj != null) {
+				// String cn = cnobj.toString();
+				// System.out.println("cn=" + cn);
+				// }
+				// // 获取departmentnumber属性
+				// Attribute deptAttr = attrs.get("departmentnumber");
+				// if (deptAttr != null) {
+				// Object deptobj = deptAttr.get();
+				// if (cnobj != null) {
+				// String dept = deptobj.toString();
+				// System.out.println("dept=" + dept);
+				// }
+				// }
+				// // 获取其他属性类似
 				NamingEnumeration<String> ids = attrs.getIDs();
 				while (ids.hasMore()) {
 					System.out.println(ids.next() + "=" + attrs.get(ids.next()).get());

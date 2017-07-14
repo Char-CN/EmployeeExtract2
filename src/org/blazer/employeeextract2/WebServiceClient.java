@@ -1,16 +1,16 @@
-package org.blazer.test;
+package org.blazer.employeeextract2;
 
 import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
+import com.alibaba.fastjson.JSON;
 import com.landray.kmss.km.review.webservice.IKmReviewQueryDataWebserviceService;
 import com.landray.kmss.km.review.webservice.flowinfo.IKmReviewGetMainDataService;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * WebService客户端
@@ -36,6 +36,9 @@ public class WebServiceClient {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		IKmReviewGetMainDataService iServer = (IKmReviewGetMainDataService) service;
 		String str = iServer.getKmReviewMainData("15bdd285f6e2165a14c2d724a17ad2ae", null, null, null, "2017-05-12 00:00:00", null, "002");
+		HashMap<String, Object> map = JSON.parseObject(str, HashMap.class);
+		System.out.println(map);
+		System.out.println(map.get("datas"));
 		System.out.println(str);
 		System.out.println("执行结束时间：" + sdf.format(new Date()));
 

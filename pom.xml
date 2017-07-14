@@ -9,6 +9,12 @@
 	</properties>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.34</version>
+		</dependency>
 		<!-- append by : http://cxf.apache.org/docs/using-cxf-with-maven.html -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>

@@ -1,4 +1,4 @@
-package org.blazer.test;
+package org.blazer.employeeextract2;
 
 import java.util.List;
 import javax.xml.namespace.QName;
@@ -31,6 +31,7 @@ public class AddSoapHeader extends AbstractSoapInterceptor {
 	 * @param message SOAP消息
 	 * @throws Exception
 	 */
+	@Override
 	public void handleMessage(SoapMessage message) throws Fault {
 //		WebServiceConfig cfg = WebServiceConfig.getInstance();
 		Document doc = DOMUtils.createDocument();
